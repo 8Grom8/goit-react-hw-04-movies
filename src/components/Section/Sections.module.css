@@ -1,0 +1,12 @@
+  
+h2 {
+  font-size: 26px;
+  color: rgb(52, 177, 119);
+  padding: 15px;
+}
+
+section {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}

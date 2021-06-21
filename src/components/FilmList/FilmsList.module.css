@@ -1,0 +1,42 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+.item {
+  display: block;
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 310px;
+  height: 530px;
+}
+
+.img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: rgb(1, 1, 36);
+  margin-bottom: 4px;
+  height: 75px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.wrapper {
+  border: 1px solid #131212;
+  padding: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}

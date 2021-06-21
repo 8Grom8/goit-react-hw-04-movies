@@ -1,0 +1,21 @@
+.headerNavLink {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 30px;
+  
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  margin-right: 30px;
+}
+
+.headerNavLinkActive {
+  color: rgb(218, 210, 223);
+  text-decoration: none;
+}

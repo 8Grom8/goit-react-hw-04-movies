@@ -1,0 +1,102 @@
+.cardWrapper {
+  padding: 15px;
+}
+
+.btnGoBack {
+  color: white;
+  background-color: darkblue;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.btnGoBack:hover,
+.btnGoBack:focus {
+  background-color: rgb(5, 5, 8);
+}
+
+.imgBox {
+  display: flex;
+  border: 1px solid darkblue;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.cardImg {
+  margin-right: 30px;
+}
+
+.img {
+  width: 400px;
+}
+.cardTitle {
+  font-size: 30px;
+  padding: 0;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.cardSubtitle {
+  color: firebrick;
+  margin-bottom: 15px;
+}
+
+.cardText {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(7, 58, 110);
+  margin-bottom: 10px;
+}
+
+.list {
+  display: flex;
+}
+
+.cardTtextList {
+  margin-right: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(7, 58, 110);
+}
+
+.informationBox {
+  border: 1px solid darkblue;
+  padding: 10px;
+}
+.title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.listGroup {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.listItem {
+  margin-right: 20px;
+  font-size: 22px;
+}
+
+.navLink {
+  color: rgb(16, 16, 231);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.active {
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .img {
+    width: 100%;
+  }
+  .img_box {
+    display: block;
+  }
+  .card_img {
+    width: 100%;
+  }
+}
