@@ -1,4 +1,4 @@
-import React, { Component /*Suspense, lazy*/ } from "react";
+import React, { Component , Suspense } from "react";
 import ApiMovies from "../../API/moviesApi";
 import { Route, NavLink, Switch } from "react-router-dom";
 import Cast from "../../components/Cast/Cast";
@@ -6,19 +6,11 @@ import Reviews from "../../components/Reviews/Reviews";
 import defaultImg from "../../images/backdrop-249158_1920.jpg";
 import css from "./MovieDetailsPage.module.css";
 
-// const Cast = lazy(() =>
-//   import("../../components/cast/Cast" /* webpackChunkName: "Cast" */)
-// );
-
-// const Reviews = lazy(() =>
-//   import("../../components/reviews/Reviews" /* webpackChunkName: "Reviews" */)
-// );
-
 class MovieDetailsPage extends Component {
   state = {
     movie: {},
     genres: [],
-    form: null,
+    from: "/",
   };
 
   async componentDidMount() {
@@ -28,7 +20,7 @@ class MovieDetailsPage extends Component {
     this.setState({
       movie: response,
       genres: [...response.genres],
-      form: this.props.location.state,
+      from: this.props.location.state ? this.props.location.state.from : "/",
     });
   }
 
@@ -37,8 +29,8 @@ class MovieDetailsPage extends Component {
   getPercent = (vote) => vote * 10;
 
   handleGoBack = () => {
-    const { location, history } = this.props;
-    history.push(location?.state?.from || "/");
+    const {  history } = this.props;
+    history.push(this.state.from || "/");
   };
 
   render() {
@@ -61,7 +53,7 @@ class MovieDetailsPage extends Component {
         >
           Go back
         </button>
-        <div className={css.img_box}>
+        <div className={css.imgBox}>
           <div className={css.cardImg}>
             <img
               src={
@@ -79,7 +71,7 @@ class MovieDetailsPage extends Component {
               {original_title} {this.getYear(release_date)}
             </h2>
 
-            <p className={css.card_text}>
+            <p className={css.cardText}>
               User Score: {this.getPercent(vote_average)}%{" "}
             </p>
 
@@ -91,7 +83,7 @@ class MovieDetailsPage extends Component {
 
             <ul className={css.list}>
               {genres.map(({ id, name }) => (
-                <li key={id} className={css.card_text_list}>
+                <li key={id} className={css.cardTextList}>
                   {name}
                 </li>
               ))}
@@ -121,7 +113,7 @@ class MovieDetailsPage extends Component {
               </NavLink>
             </li>
           </ul>
-          {/* <Suspense fallback={<h2>Loading...</h2>}> */}
+          <Suspense fallback={<h2>Loading...</h2>}>
           <Switch>
             <Route
               exact
@@ -135,7 +127,7 @@ class MovieDetailsPage extends Component {
               component={Reviews}
             />
           </Switch>
-          {/* </Suspense> */}
+          </Suspense>
         </div>
       </div>
     );

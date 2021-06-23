@@ -12,7 +12,7 @@ const FilmsList = ({ films, location }) => {
           <li key={id} className={css.item}>
             <div className={css.wrapper}>
               <Link
-                to={{ pathname: `/movies/${id}`, state: { from: location } }}
+                to={{ pathname: `/movies/${id}`, state: { from: location.pathname } }}
                 className={css.link}
               >
                 <img
